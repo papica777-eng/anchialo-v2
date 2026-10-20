@@ -1,0 +1,74 @@
+{
+  "anchialo-lavender-gel": {
+    "product_id": "prod_VTZnZhV38aUglX",
+    "price_id": "price_1UScdkEbWrG8srIzlr2GbsLO",
+    "payment_link": "https://buy.stripe.com/cNi14ncZS9cMeWX9OL5Ne0d",
+    "name": "Natural Lavender Dual Magnesium Gel (200ml)",
+    "amount_cents": 4900,
+    "amount_aud": 49.0
+  },
+  "anchialo-arnica-gel": {
+    "product_id": "prod_VTZnZi6HsHPXSW",
+    "price_id": "price_1UScdmEbWrG8srIz3lNR58Li",
+    "payment_link": "https://buy.stripe.com/9B67sL4tmfBa9CD0eb5Ne0e",
+    "name": "Arnica Active Recovery Dual Magnesium Gel (200ml)",
+    "amount_cents": 4900,
+    "amount_aud": 49.0
+  },
+  "anchialo-peppermint-gel": {
+    "product_id": "prod_VTZno89BCiqikG",
+    "price_id": "price_1UScdoEbWrG8srIzhz4LcJhA",
+    "payment_link": "https://buy.stripe.com/8x2dR9cZSbkUdST5yv5Ne0f",
+    "name": "Peppermint Cooling Athletic Dual Magnesium Gel (200ml)",
+    "amount_cents": 4900,
+    "amount_aud": 49.0
+  },
+  "anchialo-juniper-gel": {
+    "product_id": "prod_VTZnc8j4s3uG8t",
+    "price_id": "price_1UScdqEbWrG8srIzyJwKvpQW",
+    "payment_link": "https://buy.stripe.com/14A3cv7Fy4Ww5mne515Ne0g",
+    "name": "Juniper & Rosemary Dual Magnesium Gel (200ml)",
+    "amount_cents": 4900,
+    "amount_aud": 49.0
+  },
+  "anchialo-unscented-gel": {
+    "product_id": "prod_VTZnQzMkmkZsvF",
+    "price_id": "price_1UScdsEbWrG8srIz1xdBZ8XO",
+    "payment_link": "https://buy.stripe.com/cNidR97FycoY0239OL5Ne0h",
+    "name": "Pure Unscented High-Potency Dual Magnesium Gel (200ml)",
+    "amount_cents": 4900,
+    "amount_aud": 49.0
+  },
+  "anchialo-magnesium-oil": {
+    "product_id": "prod_VTZncCBsOtZw9E",
+    "price_id": "price_1UScduEbWrG8srIzaQM9IlZr",
+    "payment_link": "https://buy.stripe.com/aFaeVdgc4ex6cOP1if5Ne0i",
+    "name": "Pure Lake Pomorie Topical Magnesium Oil (300ml)",
+    "amount_cents": 4900,
+    "amount_aud": 49.0
+  },
+  "anchialo-starter-trio": {
+    "product_id": "prod_VTZnR4VELpc4Rv",
+    "price_id": "price_1UScdwEbWrG8srIzEjRKIJaj",
+    "payment_link": "https://buy.stripe.com/6oU4gzcZS60AeWX9OL5Ne0j",
+    "name": "Balneology Starter Trio (Bundle of 3 Formulations)",
+    "amount_cents": 12500,
+    "amount_aud": 125.0
+  },
+  "anchialo-complete-suite": {
+    "product_id": "prod_VTZnQokw9pF6gz",
+    "price_id": "price_1UScdyEbWrG8srIzw7tenrLx",
+    "payment_link": "https://buy.stripe.com/7sYeVdgc4dt28yzbWT5Ne0k",
+    "name": "Lake Pomorie Sovereign Clinic Complete Suite (Set of 6)",
+    "amount_cents": 24500,
+    "amount_aud": 245.0
+  },
+  "anchialo-custom-cart": {
+    "product_id": "prod_VTZnn8GT66EkWn",
+    "price_id": "price_1USce0EbWrG8srIzifrYsg9d",
+    "payment_link": "https://buy.stripe.com/4gM28rgc44WwbKL3qn5Ne0l",
+    "name": "Anchialo Certified Dual Magnesium (Custom Quantity Order)",
+    "amount_cents": 4900,
+    "amount_aud": 49.0
+  }
+}

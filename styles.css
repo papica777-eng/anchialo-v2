@@ -2002,6 +2002,46 @@ button {
   color: var(--text-primary);
 }
 
+/* Stripe Express Checkout Button */
+.btn-checkout-stripe {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #635bff;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px 20px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(99, 91, 255, 0.28);
+  transition: all var(--tr-fast);
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.btn-checkout-stripe:hover {
+  background: #534be8;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(99, 91, 255, 0.35);
+  color: #ffffff;
+}
+
+.stripe-btn-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stripe-badge-pill {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(255, 255, 255, 0.22);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
 /* PayPal Checkout Block */
 .paypal-checkout-block {
   min-height: 44px;

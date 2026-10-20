@@ -24,6 +24,26 @@
     blogPosts: []
   };
 
+  // Official Stripe Live Gateway Configuration
+  const STRIPE_CONFIG = {
+    publishableKey: 'pk_live_51N2xQLEbWrG8srIzRdDyBIP5xQnhWutQq6xR8GVDWNCXUKSrl4dNlt4BZ5id396FlyboHLbDHNtZKcBEZPRLTJw400y5M9LYvA',
+    links: {
+      'gel-arnica': 'https://buy.stripe.com/9B67sL4tmfBa9CD0eb5Ne0e',
+      'gel-lavender': 'https://buy.stripe.com/cNi14ncZS9cMeWX9OL5Ne0d',
+      'gel-peppermint': 'https://buy.stripe.com/8x2dR9cZSbkUdST5yv5Ne0f',
+      'gel-rosemary': 'https://buy.stripe.com/8x2dR9cZSbkUdST5yv5Ne0f',
+      'gel-juniper': 'https://buy.stripe.com/14A3cv7Fy4Ww5mne515Ne0g',
+      'gel-grape': 'https://buy.stripe.com/cNidR97FycoY0239OL5Ne0h',
+      'gel-unscented': 'https://buy.stripe.com/cNidR97FycoY0239OL5Ne0h',
+      'oil-pure': 'https://buy.stripe.com/aFaeVdgc4ex6cOP1if5Ne0i',
+      'combo-starter': 'https://buy.stripe.com/6oU4gzcZS60AeWX9OL5Ne0j',
+      'combo-gel-oil': 'https://buy.stripe.com/cNi14ncZS9cMeWX9OL5Ne0d',
+      'combo-trio': 'https://buy.stripe.com/6oU4gzcZS60AeWX9OL5Ne0j',
+      'combo-complete': 'https://buy.stripe.com/7sYeVdgc4dt28yzbWT5Ne0k',
+      'custom': 'https://buy.stripe.com/4gM28rgc44WwbKL3qn5Ne0l'
+    }
+  };
+
   // Official Verbatim Texts
   const TEXTS = {
     usage: "Gently massage a generous amount into clean, dry skin on the desired muscle or joint area. Allow the bioavailable mineral gel to absorb for 30 minutes to several hours, or leave overnight for deep restorative relaxation. If slight natural mineral salt crystals form on the skin, simply rinse with cool water. Avoid open abrasions and eyes.",
@@ -235,7 +255,34 @@
     initCartDrawer();
     initModals();
     initFaqAccordion();
+    checkStripeReturn();
   });
+
+  function checkStripeReturn() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('payment') === 'stripe_success') {
+      const modal = document.getElementById('paymentSuccessModal');
+      const txIdEl = document.getElementById('successTxId');
+      const payerEl = document.getElementById('successPayer');
+      const amountEl = document.getElementById('successAmount');
+      const waBtn = document.getElementById('btnSuccessWhatsApp');
+      const sessionId = urlParams.get('session_id') || ('STRIPE-' + Date.now().toString(36).toUpperCase());
+
+      if (txIdEl) txIdEl.textContent = sessionId;
+      if (payerEl) payerEl.textContent = 'Stripe Verified Customer (Apple Pay / Card)';
+      if (amountEl) amountEl.textContent = 'Paid via Stripe AU';
+
+      if (waBtn) {
+        const msg = encodeURIComponent(`Hi Sotir, I have successfully completed payment via Stripe (Apple Pay / Card) for my Anchialo order! Checkout Ref: ${sessionId}. Please confirm Melbourne dispatch!`);
+        waBtn.href = `https://wa.me/61423269586?text=${msg}`;
+      }
+
+      // Clear cart
+      STATE.cart = [];
+      saveCart();
+      if (modal) modal.classList.add('active');
+    }
+  }
 
   // ==================== CURRENCY CONTROLLER ====================
   function initCurrency() {
@@ -731,6 +778,8 @@
     }
 
     if (!listEl) return;
+    const stripeBtn = document.getElementById('btnStripeCheckout');
+
     if (STATE.cart.length === 0) {
       listEl.innerHTML = `
         <div class="bag-empty-state">
@@ -739,8 +788,24 @@
           <p>Explore our pure Black Sea mineral formulations above.</p>
         </div>
       `;
+      if (stripeBtn) stripeBtn.style.display = 'none';
       renderPayPalButtons();
       return;
+    }
+
+    // Configure Stripe Express Link for current cart
+    if (stripeBtn) {
+      stripeBtn.style.display = 'flex';
+      const totalUnits = STATE.cart.reduce((sum, it) => sum + it.qty, 0);
+      if (STATE.cart.length === 1 && STRIPE_CONFIG.links[STATE.cart[0].id]) {
+        stripeBtn.href = `${STRIPE_CONFIG.links[STATE.cart[0].id]}?quantity=${STATE.cart[0].qty}`;
+      } else if (totalUnits === 3 && subtotalAUD === 125) {
+        stripeBtn.href = STRIPE_CONFIG.links['combo-trio'];
+      } else if (totalUnits === 6 && subtotalAUD === 245) {
+        stripeBtn.href = STRIPE_CONFIG.links['combo-complete'];
+      } else {
+        stripeBtn.href = `${STRIPE_CONFIG.links['custom']}?quantity=${totalUnits}`;
+      }
     }
 
     listEl.innerHTML = STATE.cart.map((item, idx) => `
