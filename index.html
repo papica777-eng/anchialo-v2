@@ -649,6 +649,30 @@
       </div>
       <p class="bag-tax-note">Includes domestic Australian GST. Dispatched from Melbourne.</p>
 
+      <!-- Australia Post Destination & Tax Invoice Estimator -->
+      <div class="auspost-drawer-box">
+        <div class="auspost-box-header">
+          <span class="auspost-box-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Australia Post Delivery Check
+          </span>
+          <span class="auspost-verified-tag" id="auspostStatusTag">Melbourne Dispatch</span>
+        </div>
+        <div class="auspost-input-row">
+          <input type="text" id="auspostSearchInput" class="auspost-search-input" placeholder="Enter AU Suburb or Postcode..." autocomplete="off">
+          <button type="button" id="btnAuspostCheck" class="btn-auspost-check">Verify</button>
+        </div>
+        <div class="auspost-results-dropdown" id="auspostResultsDropdown" style="display:none;"></div>
+        <div class="auspost-selected-details" id="auspostSelectedDetails" style="display:none;">
+          <div class="auspost-locality-name" id="auspostLocalityDisplay"></div>
+          <div class="auspost-transit-meta" id="auspostTransitDisplay"></div>
+        </div>
+        <button type="button" class="btn-open-tax-invoice" id="btnOpenTaxInvoiceDrawer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <span>Preview Official ATO Tax Invoice</span>
+        </button>
+      </div>
+
       <div class="bag-checkout-actions">
         <!-- Stripe Express Checkout (Apple Pay, Google Pay, Visa/Mastercard/Amex) -->
         <a id="btnStripeCheckout" href="https://buy.stripe.com/4gM28rgc44WwbKL3qn5Ne0l" target="_blank" rel="noopener" class="btn-checkout-stripe">
@@ -771,9 +795,145 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.53 11.51c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8.6.26 1.07.42 1.44.54.61.19 1.16.16 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3Z"/></svg>
           <span>Notify Sotir on WhatsApp for Faster Dispatch</span>
         </a>
+        <button class="btn-success-invoice" id="btnSuccessTaxInvoice">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <span>Generate &amp; Print Official Australian Tax Invoice</span>
+        </button>
         <button class="btn-success-close" id="btnCloseSuccessModal">
           <span>Continue Browsing</span>
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ATO TAX INVOICE & AUSPOST DISPATCH MODAL ==================== -->
+  <div class="modal-backdrop" id="taxInvoiceModal">
+    <div class="modal-invoice-wrapper">
+      <div class="invoice-toolbar no-print">
+        <div class="toolbar-brand">
+          <span class="toolbar-badge">ATO TAX INVOICE</span>
+          <span class="toolbar-carrier">Australia Post eParcel Domestic Dispatch</span>
+        </div>
+        <div class="toolbar-actions">
+          <button class="btn-invoice-print" id="btnPrintTaxInvoice">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <span>Print Invoice / Save PDF</span>
+          </button>
+          <button class="btn-modal-close" id="btnCloseTaxInvoice">&times;</button>
+        </div>
+      </div>
+
+      <!-- Printable Invoice Sheet -->
+      <div class="invoice-sheet" id="invoicePrintSheet">
+        <!-- Invoice Header -->
+        <div class="inv-header">
+          <div class="inv-brand-col">
+            <div class="inv-logo-title">ANCHIALO</div>
+            <div class="inv-brand-sub">Pure Black Sea Balneotherapy &amp; Certified Dual Magnesium</div>
+            <div class="inv-origin-tag">Handcrafted by Azimut 6000 Ltd · Pomorie, Bulgaria</div>
+            <div class="inv-seller-info">
+              <strong>Melbourne Dispatch Hub (Seller / Consignor):</strong><br>
+              CPT MMA / Anchialo Australia · Sotir Kichukov<br>
+              Melbourne, Victoria 3000, Australia<br>
+              Direct / WhatsApp: +61 423 269 586 · Web: www.anchialo.com
+            </div>
+          </div>
+          <div class="inv-meta-col">
+            <div class="inv-title-badge">TAX INVOICE</div>
+            <div class="inv-meta-grid">
+              <span class="inv-label">Invoice Number:</span>
+              <strong id="invNumber">ANCH-2026-0842</strong>
+              <span class="inv-label">Date of Issue:</span>
+              <span id="invDate">20 Oct 2026</span>
+              <span class="inv-label">Supply Date:</span>
+              <span id="invSupplyDate">20 Oct 2026</span>
+              <span class="inv-label">GST Compliance:</span>
+              <span>10% Australian GST Included</span>
+              <span class="inv-label">Payment Channel:</span>
+              <strong id="invPaymentMethod">PayPal / Stripe Secure</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Delivery & AusPost Block -->
+        <div class="inv-delivery-box">
+          <div class="inv-delivery-col">
+            <h5 class="inv-box-heading">CUSTOMER / SHIP-TO DESTINATION</h5>
+            <div id="invCustomerName" class="inv-strong">Valued Customer</div>
+            <div id="invCustomerAddress">Australian Domestic Delivery Address</div>
+            <div id="invCustomerLocality" class="inv-strong">Melbourne, VIC 3000, Australia</div>
+          </div>
+          <div class="inv-auspost-col">
+            <div class="auspost-logo-row">
+              <span class="ap-logo-text">AUSTRALIA POST</span>
+              <span class="ap-service-tag" id="invAuspostService">PARCEL POST DOMESTIC</span>
+            </div>
+            <div class="inv-dispatch-meta">
+              <div><strong>Lodgement Facility:</strong> Melbourne Central (3000)</div>
+              <div><strong>Calculated Parcel Weight:</strong> <span id="invWeight">0.60 kg Net</span></div>
+              <div><strong>AusPost Reference:</strong> <span id="invConsignment">AP-9970-8421-MEL</span></div>
+            </div>
+            <div class="inv-barcode-strip">
+              <div class="barcode-bars">||| | |||| | |||||||| |||| | | ||| |||| |</div>
+              <div class="barcode-digits" id="invBarcodeDigits">99703800230111746</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Items Table -->
+        <table class="inv-table">
+          <thead>
+            <tr>
+              <th style="width: 45%;">Item &amp; Formulation Description</th>
+              <th style="width: 15%; text-align: center;">Packaging</th>
+              <th style="width: 10%; text-align: center;">Qty</th>
+              <th style="width: 15%; text-align: right;">Unit Price (AUD)</th>
+              <th style="width: 15%; text-align: right;">Amount (AUD)</th>
+            </tr>
+          </thead>
+          <tbody id="invItemsTableBody">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+
+        <!-- Totals Wrap -->
+        <div class="inv-totals-wrap">
+          <div class="inv-notes">
+            <strong>Balneological Assay &amp; ATO Tax Compliance Notice:</strong><br>
+            Formulations derived from the fractional solar crystallization of ancient Lake Pomorie mineral brine, Bulgaria. Certified assay under BDS 8840:1971 &amp; European Pharmacopoeia (253 g/L MgCl₂). All monetary figures are in Australian Dollars (AUD) and incorporate 10% Australian GST in accordance with A New Tax System (Goods and Services Tax) Act 1999 (ATO GSTR 2013/1).
+          </div>
+          <div class="inv-totals-box">
+            <div class="inv-total-row">
+              <span>Items Subtotal:</span>
+              <span id="invSubtotal">A$ 49.00</span>
+            </div>
+            <div class="inv-total-row">
+              <span>Australia Post Delivery:</span>
+              <span id="invShipping">FREE ($80+ Express Promotion)</span>
+            </div>
+            <div class="inv-total-row inv-gst-row">
+              <span>Includes 10% Australian GST:</span>
+              <span id="invGst">A$ 4.45</span>
+            </div>
+            <div class="inv-total-row inv-grand-total">
+              <span>Total Amount Payable:</span>
+              <strong id="invGrandTotal">A$ 49.00 AUD</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Signoff -->
+        <div class="inv-footer-signoff">
+          <div>
+            <div class="sign-line">Sotir Kichukov</div>
+            <div>Authorized Dispatch Consignor · CPT MMA Melbourne</div>
+          </div>
+          <div class="inv-seal-stamp">
+            <span>ANCHIALO</span>
+            <small>VERIFIED ATO</small>
+            <span>MELBOURNE</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
