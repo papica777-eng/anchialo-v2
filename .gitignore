@@ -3,3 +3,8 @@ Thumbs.db
 __pycache__/
 *.pyc
 .vscode/
+.env
+.env.*
+config/
+private/
+secrets/

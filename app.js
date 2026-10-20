@@ -739,6 +739,7 @@
           <p>Explore our pure Black Sea mineral formulations above.</p>
         </div>
       `;
+      renderPayPalButtons();
       return;
     }
 
@@ -774,6 +775,143 @@
         saveCart();
       });
     });
+    // Re-render PayPal Smart Buttons with current cart total
+    renderPayPalButtons();
+  }
+
+  // ==================== PAYPAL CHECKOUT ENGINE ====================
+  let paypalRenderTimer = null;
+  function renderPayPalButtons() {
+    const container = document.getElementById('paypal-button-container');
+    if (!container) return;
+
+    if (typeof paypal === 'undefined') {
+      container.innerHTML = '<div style="text-align:center; padding:12px; font-size:12px; color:var(--text-muted);">Loading Secure PayPal &amp; Card Gateway...</div>';
+      if (!window.__paypalRetryBound) {
+        window.__paypalRetryBound = true;
+        let attempts = 0;
+        const retryTimer = setInterval(() => {
+          attempts++;
+          if (typeof paypal !== 'undefined') {
+            clearInterval(retryTimer);
+            renderPayPalButtons();
+          } else if (attempts > 30) {
+            clearInterval(retryTimer);
+            container.innerHTML = '<div style="text-align:center; padding:10px 0; font-size:12px; color:var(--text-muted);">Secure Gateway Ready via WhatsApp Order below.</div>';
+          }
+        }, 200);
+      }
+      return;
+    }
+
+    const subtotalAUD = STATE.cart.reduce((sum, it) => sum + (it.priceAUD * it.qty), 0);
+    if (STATE.cart.length === 0 || subtotalAUD <= 0) {
+      container.innerHTML = '<div style="text-align:center; padding:10px 0; font-size:12px; color:var(--text-muted);">Select formulations above to activate PayPal &amp; Card Checkout</div>';
+      return;
+    }
+
+    // Debounce to prevent multiple SDK re-renders
+    clearTimeout(paypalRenderTimer);
+    paypalRenderTimer = setTimeout(() => {
+      container.innerHTML = '';
+      try {
+        paypal.Buttons({
+          style: {
+            layout: 'vertical',
+            color: 'gold',
+            shape: 'pill',
+            label: 'checkout',
+            height: 44
+          },
+          createOrder: function(data, actions) {
+            const currentTotal = STATE.cart.reduce((sum, it) => sum + (it.priceAUD * it.qty), 0);
+            return actions.order.create({
+              intent: 'CAPTURE',
+              purchase_units: [{
+                description: 'Anchialo Certified Dual Magnesium Balneology Formulations',
+                custom_id: 'ANCHIALO_MELBOURNE_DISPATCH',
+                amount: {
+                  currency_code: 'AUD',
+                  value: currentTotal.toFixed(2),
+                  breakdown: {
+                    item_total: {
+                      currency_code: 'AUD',
+                      value: currentTotal.toFixed(2)
+                    }
+                  }
+                },
+                items: STATE.cart.map(it => ({
+                  name: it.name,
+                  unit_amount: {
+                    currency_code: 'AUD',
+                    value: it.priceAUD.toFixed(2)
+                  },
+                  quantity: it.qty.toString()
+                }))
+              }]
+            });
+          },
+          onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+              handlePayPalSuccess(details);
+            });
+          },
+          onCancel: function(data) {
+            console.log('PayPal Checkout cancelled by user:', data);
+          },
+          onError: function(err) {
+            console.error('PayPal Transaction Error:', err);
+            alert('PayPal encountered a temporary error. You can also complete your order instantly via WhatsApp.');
+          }
+        }).render('#paypal-button-container');
+      } catch (err) {
+        console.error('PayPal render exception:', err);
+      }
+    }, 150);
+  }
+
+  function handlePayPalSuccess(details) {
+    const modal = document.getElementById('paymentSuccessModal');
+    const txIdEl = document.getElementById('successTxId');
+    const payerEl = document.getElementById('successPayer');
+    const amountEl = document.getElementById('successAmount');
+    const waBtn = document.getElementById('btnSuccessWhatsApp');
+
+    let txId = 'PAYPAL-TX-' + Date.now();
+    try {
+      if (details.purchase_units && details.purchase_units[0] && details.purchase_units[0].payments && details.purchase_units[0].payments.captures && details.purchase_units[0].payments.captures[0]) {
+        txId = details.purchase_units[0].payments.captures[0].id;
+      } else if (details.id) {
+        txId = details.id;
+      }
+    } catch(e) {}
+
+    const givenName = (details.payer && details.payer.name && details.payer.name.given_name) ? details.payer.name.given_name : '';
+    const surname = (details.payer && details.payer.name && details.payer.name.surname) ? details.payer.name.surname : '';
+    const payerEmail = (details.payer && details.payer.email_address) ? details.payer.email_address : '';
+    const fullName = `${givenName} ${surname}`.trim() || 'Valued Customer';
+
+    let paidVal = '49.00';
+    try {
+      paidVal = details.purchase_units[0].amount.value;
+    } catch(e) {}
+
+    if (txIdEl) txIdEl.textContent = txId;
+    if (payerEl) payerEl.textContent = `${fullName} (${payerEmail})`;
+    if (amountEl) amountEl.textContent = `A$ ${paidVal} AUD`;
+
+    // WhatsApp Notify link
+    if (waBtn) {
+      const msg = encodeURIComponent(`Hi Sotir, I have successfully paid A$ ${paidVal} AUD via PayPal for my Anchialo order! Transaction ID: ${txId}. Payer: ${fullName} (${payerEmail}). Please confirm dispatch!`);
+      waBtn.href = `https://wa.me/61423269586?text=${msg}`;
+    }
+
+    // Clear cart & close drawer
+    STATE.cart = [];
+    saveCart();
+    closeBagDrawer();
+
+    if (modal) modal.classList.add('active');
   }
 
   // ==================== MODALS ====================
@@ -816,6 +954,18 @@
     if (blogModal) blogModal.addEventListener('click', (e) => {
       if (e.target === blogModal) blogModal.classList.remove('active');
     });
+
+    // Payment Success Modal Close
+    const successModal = document.getElementById('paymentSuccessModal');
+    const closeSuccessBtn = document.getElementById('btnCloseSuccessModal');
+    if (closeSuccessBtn && successModal) {
+      closeSuccessBtn.addEventListener('click', () => successModal.classList.remove('active'));
+    }
+    if (successModal) {
+      successModal.addEventListener('click', (e) => {
+        if (e.target === successModal) successModal.classList.remove('active');
+      });
+    }
   }
 
   // ==================== FAQ ACCORDION ====================

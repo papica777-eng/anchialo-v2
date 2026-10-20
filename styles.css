@@ -2002,6 +2002,51 @@ button {
   color: var(--text-primary);
 }
 
+/* PayPal Checkout Block */
+.paypal-checkout-block {
+  min-height: 44px;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 2px;
+}
+
+#paypal-button-container {
+  width: 100%;
+}
+
+.checkout-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 6px 0;
+}
+
+.checkout-divider::before,
+.checkout-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.checkout-divider span {
+  padding: 0 12px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.checkout-trust-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
 /* ==================== MODALS ==================== */
 .modal-backdrop {
   position: fixed;
@@ -2167,6 +2212,122 @@ button {
 
 .modal-blog-body p {
   margin-bottom: 16px;
+}
+
+/* Payment Success Modal */
+.modal-success-card {
+  background: #ffffff;
+  border-radius: 28px;
+  width: 100%;
+  max-width: 520px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(10, 20, 25, 0.25);
+  position: relative;
+  animation: modalScaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.success-icon-wrap {
+  width: 72px;
+  height: 72px;
+  background: #ecfdf5;
+  color: #059669;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 8px 24px rgba(5, 150, 105, 0.15);
+}
+
+.success-subtitle {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 12px 0 24px;
+}
+
+.order-receipt-box {
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-bottom: 24px;
+  text-align: left;
+  display: grid;
+  gap: 10px;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.receipt-row strong {
+  color: var(--text-primary);
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.receipt-amount {
+  font-family: var(--font-serif);
+  font-size: 18px !important;
+  color: var(--accent-gold) !important;
+  font-weight: 700 !important;
+}
+
+.success-modal-actions {
+  display: grid;
+  gap: 12px;
+}
+
+.btn-success-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #15803d;
+  color: #ffffff;
+  font-size: 14.5px;
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: 999px;
+  transition: all var(--tr-fast);
+  box-shadow: 0 4px 16px rgba(21, 128, 61, 0.25);
+}
+
+.btn-success-wa:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+}
+
+.btn-success-close {
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: color var(--tr-fast);
+}
+
+.btn-success-close:hover {
+  color: var(--text-primary);
 }
 
 /* ==================== RESPONSIVE BREAKPOINTS ==================== */
