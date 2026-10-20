@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANCHIALO — Pure Black Sea Balneology &amp; Certified Dual Magnesium</title>
+  <meta name="description" content="Authentic Bulgarian Black Sea natural balneotherapy. 100% natural Dual Magnesium gels and pure topical oils harvested from the mineral-rich waters of Lake Pomorie. Handcrafted by Azimut 6000 Ltd. Official Australian Store ($49 AUD).">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <!-- Premium Bio-Cosmetics Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== TOP ANNOUNCEMENT BAR ==================== -->
+  <div class="announcement-bar">
+    <div class="container announcement-inner">
+      <span class="announcement-badge">✦ 100% NATURAL SOLAR HARVEST</span>
+      <p class="announcement-text">
+        Pure Pomorie Lake Minerals · 253 g/L Certified Magnesium · Complimentary Express Delivery Across Australia on Orders Over $80
+      </p>
+      <div class="announcement-contact">
+        <a href="https://wa.me/61423269586" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.53 11.51c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8.6.26 1.07.42 1.44.54.61.19 1.16.16 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3Z"/></svg>
+          <span>Sotir Kichukov: +61 423 269 586</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PRESTIGE NAVIGATION HEADER ==================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand-group">
+        <span class="brand-logo-text">ANCHIALO</span>
+        <span class="brand-tagline">BULGARIAN BLACK SEA BALNEOLOGY · POMORIE</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#collection">Collection</a>
+        <a href="#blends">Botanical Blends</a>
+        <a href="#purity">Clinical Purity</a>
+        <a href="#heritage">Lake Pomorie</a>
+        <a href="#journal">Wellness Journal</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Currency Picker -->
+        <div class="currency-picker">
+          <label for="currencySelect">Currency</label>
+          <select id="currencySelect" aria-label="Select currency">
+            <option value="AUD" selected>AUD ($49)</option>
+            <option value="USD">USD ($32)</option>
+            <option value="EUR">EUR (€28)</option>
+            <option value="BGN">BGN (45 лв)</option>
+          </select>
+        </div>
+
+        <!-- Bag Button -->
+        <button class="bag-trigger-btn" id="openBagBtn" title="View Shopping Bag" aria-label="View Shopping Bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="bag-label">Bag</span>
+          <span class="bag-count" id="cartCountBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== HERO SECTION: SPA & BIO-COSMETICS ==================== -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-text-col">
+          <div class="hero-origin-pill">
+            <span class="leaf-icon">🌿</span>
+            <span>HARVESTED FROM POMORIE HYPER-SALINE LAKE · BULGARIA</span>
+          </div>
+
+          <h1 class="hero-title">
+            Natural Balneotherapy.<br>
+            <em>Born from Ancient Salt Lakes.</em>
+          </h1>
+
+          <p class="hero-description">
+            Experience the natural restorative power of Lake Pomorie's pure mineral brine. 
+            Delivering <strong>253.14 g/L active Magnesium Chloride</strong> and 
+            <strong>70.36 g/L Magnesium Sulfate</strong>, cold-blended with organic botanical extracts 
+            to rapidly relieve muscle fatigue, soothe joint stiffness, and support deep restorative sleep.
+          </p>
+
+          <!-- Key Organic Trust Badges -->
+          <div class="hero-trust-row">
+            <div class="trust-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>100% Natural Origins</span>
+            </div>
+            <div class="trust-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>Zero Preservatives Added</span>
+            </div>
+            <div class="trust-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/></svg>
+              <span>ATA Certified Lab Purity</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="hero-cta-group">
+            <a href="#collection" class="btn-hero-primary">
+              <span>Shop Collection · $49 AUD</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a href="https://wa.me/61423269586?text=Hi%20Sotir,%20I%20would%20like%20to%20order%20Anchialo%20Dual%20Magnesium%20Gel%20($49%20AUD)." target="_blank" rel="noopener" class="btn-hero-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.53 11.51c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8.6.26 1.07.42 1.44.54.61.19 1.16.16 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3Z"/></svg>
+              <span>Instant Order via WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Social Proof -->
+          <div class="hero-rating">
+            <div class="rating-stars">★★★★★</div>
+            <span class="rating-text"><strong>4.9 / 5 Rating</strong> from 420+ Australian wellness clients &amp; athletes</span>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase -->
+        <div class="hero-visual-col">
+          <div class="hero-product-stage">
+            <div class="stage-pedestal"></div>
+            <div class="stage-badge-seal">
+              <span class="seal-ring"></span>
+              <span class="seal-text">ISO 22716 GMP<br>CERTIFIED</span>
+            </div>
+
+            <!-- Main Product Jar Preview -->
+            <img id="heroJarImage" class="hero-jar-img" src="assets/images/products/06_file_transp.png" alt="Anchialo Dual Magnesium Gel 300g Arnica Blend">
+
+            <!-- Floating Product Card Info -->
+            <div class="hero-card-tag">
+              <div class="hero-card-left">
+                <span class="hero-card-sub" id="heroCardSub">ARNICA MONTANA BLEND</span>
+                <span class="hero-card-name" id="heroCardName">Dual Magnesium Topical Gel</span>
+                <span class="hero-card-vol">300 g ℮ · Made in Pomorie, Bulgaria</span>
+              </div>
+              <div class="hero-card-price">
+                <span class="price-val" id="heroPriceTag">A$ 49.00 AUD</span>
+                <button class="btn-quick-bag" id="heroQuickAddBtn" title="Add to bag">Add</button>
+              </div>
+            </div>
+
+            <!-- Mini Blend Switcher on Hero -->
+            <div class="hero-blend-strip">
+              <span class="blend-strip-label">SELECT BLEND:</span>
+              <div class="blend-dots-row">
+                <button class="blend-dot-btn active" data-blend="arnica" title="Arnica Blend" style="--dot-color: #d97706;"></button>
+                <button class="blend-dot-btn" data-blend="lavender" title="Lavender Blend" style="--dot-color: #8b5cf6;"></button>
+                <button class="blend-dot-btn" data-blend="rosemary" title="Rosemary Blend" style="--dot-color: #059669;"></button>
+                <button class="blend-dot-btn" data-blend="juniper" title="Juniper Blend" style="--dot-color: #0284c7;"></button>
+                <button class="blend-dot-btn" data-blend="grape" title="Grape Blend" style="--dot-color: #9d174d;"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BOTANICAL & BALNEOLOGY PILLARS ==================== -->
+    <section class="section-pillars">
+      <div class="container">
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon">☀️</div>
+            <h3 class="pillar-title">Fractional Solar Evaporation</h3>
+            <p class="pillar-text">
+              Formed naturally over months of Mediterranean sunshine in Pomorie's coastal salterns. 
+              As table salt precipitates out, the concentrated mineral brine settles on top — dense with active magnesium ions.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">💧</div>
+            <h3 class="pillar-title">Dual Bioavailable Magnesium</h3>
+            <p class="pillar-text">
+              Unites 253 g/L Magnesium Chloride with 70 g/L Magnesium Sulfate. Osmotically absorbed directly through 
+              the skin to relieve muscle tension without oral digestive upset.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">🌿</div>
+            <h3 class="pillar-title">Certified Bio Botanicals</h3>
+            <p class="pillar-text">
+              Infused with genuine botanical extracts — Arnica Montana, Bulgarian Lavender, Rosemary, and Juniper. 
+              Free of artificial parabens, synthetic perfumes, or petrochemical fillers.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">🏛️</div>
+            <h3 class="pillar-title">2,500-Year Balneology Heritage</h3>
+            <p class="pillar-text">
+              Lake Pomorie (ancient Anchialo) has been renowned for therapeutic mud and mineral cures since Thracian 
+              and Roman times. Handcrafted by Azimut 6000 Ltd under strict European GMP.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== THE FIVE SIGNATURE BLENDS: APOTHECARY GARDEN ==================== -->
+    <section class="section-blends" id="blends">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-kicker">THE APOTHECARY COLLECTION</span>
+          <h2 class="section-headline">Five Signature Botanical Formulations</h2>
+          <p class="section-subtext">
+            Each blend combines the therapeutic magnesium brine of Lake Pomorie with targeted natural botanicals, 
+            crafted for specific physical recovery and restorative wellness rituals.
+          </p>
+        </div>
+
+        <!-- Blend Tabs -->
+        <div class="botanical-tabs-row" id="blendTabsRow">
+          <button class="btn-blend-tab active" data-blend="arnica">
+            <span class="tab-indicator" style="background:#d97706;"></span>
+            <span class="tab-name">Arnica Montana</span>
+            <span class="tab-desc">Muscle Soreness &amp; Spasms</span>
+          </button>
+          <button class="btn-blend-tab" data-blend="lavender">
+            <span class="tab-indicator" style="background:#8b5cf6;"></span>
+            <span class="tab-name">Bulgarian Lavender</span>
+            <span class="tab-desc">Restorative Sleep &amp; Calming</span>
+          </button>
+          <button class="btn-blend-tab" data-blend="rosemary">
+            <span class="tab-indicator" style="background:#059669;"></span>
+            <span class="tab-name">Garden Rosemary</span>
+            <span class="tab-desc">Thermal Microcirculation</span>
+          </button>
+          <button class="btn-blend-tab" data-blend="juniper">
+            <span class="tab-indicator" style="background:#0284c7;"></span>
+            <span class="tab-name">Alpine Juniper</span>
+            <span class="tab-desc">Joint Mobility &amp; Detox</span>
+          </button>
+          <button class="btn-blend-tab" data-blend="grape">
+            <span class="tab-indicator" style="background:#9d174d;"></span>
+            <span class="tab-name">Red Grape Seed</span>
+            <span class="tab-desc">Antioxidant &amp; Skin Elasticity</span>
+          </button>
+        </div>
+
+        <!-- Blend Detail Showcase Box -->
+        <div class="blend-display-card">
+          <div class="blend-display-grid">
+            <!-- Left: High-Res Packaging Presentation -->
+            <div class="blend-packaging-column">
+              <div class="packaging-card">
+                <div class="packaging-lid-aperture">
+                  <img id="studioLidImg" src="assets/official_labels_rendered/anhialo_massage_gel_arnica_top_fv17.png" alt="Top Lid Label">
+                </div>
+                <div class="packaging-meta-bar">
+                  <span class="packaging-badge" id="lidMetaTitle">TOP LID · Ø 86.0 MM</span>
+                  <button class="btn-inspect-label" id="btnInspectLabelModal">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <span>Inspect 300 DPI Label</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Side Wrap Preview -->
+              <div class="wrap-preview-frame" id="sideWrapBox">
+                <div class="wrap-preview-header">
+                  <span>PANORAMIC JAR WRAP · 280 × 38 MM</span>
+                  <span class="drag-hint">Drag horizontally to read copy</span>
+                </div>
+                <div class="wrap-scroll-container" id="sideWrapScroller">
+                  <img id="studioSideImg" src="assets/official_labels_rendered/side_label_grey_arnica_v12.png" alt="Full Side Wrap Label">
+                </div>
+              </div>
+
+              <!-- Download & Certificate Links -->
+              <div class="blend-action-row">
+                <a id="downloadLidPdf" href="assets/official_drive_assets/labels/Anhialo Massage Gel_Arnica Top Fv17.pdf" class="btn-action-outline" download>
+                  <span>Download Lid PDF (CMYK)</span>
+                </a>
+                <a id="downloadSidePdf" href="assets/official_drive_assets/labels/Side Label Grey Arnica v12.pdf" class="btn-action-outline" download>
+                  <span>Download Wrap PDF (CMYK)</span>
+                </a>
+                <button class="btn-action-gold" id="btnOpenCertModal">
+                  <span>View Lab Analysis Report</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Right: Botanical Profile & Benefits -->
+            <div class="blend-details-column">
+              <div class="blend-header">
+                <span class="blend-tag" id="activeBlendBotanical">Arnica Montana Flower Extract</span>
+                <h3 class="blend-title" id="activeBlendTitle">ARNICA BLEND — DUAL MAGNESIUM COMPLEX</h3>
+                <div class="blend-price-row">
+                  <span class="blend-price" id="activeBlendPrice">A$ 49.00 AUD</span>
+                  <span class="blend-unit">/ 300g Net Weight Jar</span>
+                </div>
+              </div>
+
+              <!-- Content Tabs -->
+              <div class="detail-tabs-header">
+                <button class="btn-detail-tab active" data-tab="purpose">Therapeutic Action</button>
+                <button class="btn-detail-tab" data-tab="inci">Full INCI Formula</button>
+                <button class="btn-detail-tab" data-tab="usage">Application Ritual</button>
+                <button class="btn-detail-tab" data-tab="producer">Origin &amp; Producer</button>
+              </div>
+
+              <div class="detail-tab-body" id="hudTabBody">
+                <!-- Dynamically populated by app.js -->
+              </div>
+
+              <div class="blend-footer-actions">
+                <button class="btn-add-blend-bag" id="btnAddActiveBlend">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  <span>Add to Bag — $49 AUD</span>
+                </button>
+                <a href="https://wa.me/61423269586" target="_blank" rel="noopener" class="btn-wa-blend" id="btnWaActiveBlend">
+                  <span>Order on WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== E-COMMERCE PRODUCTS CATALOG ==================== -->
+    <section class="section-collection" id="collection">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-kicker">ONLINE APOTHECARY</span>
+          <h2 class="section-headline">The Complete Anchialo Collection</h2>
+          <p class="section-subtext">
+            Handcrafted in Bulgaria by Azimut 6000 Ltd. Stocked and distributed in Melbourne, Australia. 
+            Same-day pickup available at CPT MMA or domestic Australia Post express dispatch.
+          </p>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div class="collection-toolbar">
+          <div class="collection-pills">
+            <button class="btn-filter-pill active" data-cat="all">All Formulations</button>
+            <button class="btn-filter-pill" data-cat="gel">Dual Magnesium Gels (300g)</button>
+            <button class="btn-filter-pill" data-cat="oil">Magnesium Brine Oil (300ml)</button>
+            <button class="btn-filter-pill" data-cat="combo">Value Sets &amp; Packs</button>
+          </div>
+
+          <div class="collection-search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="catalogSearch" placeholder="Search arnica, lavender, oil, combo...">
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Dynamically populated from CATALOG_PRODUCTS in app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CLINICAL LABORATORY PURITY & ANALYSIS ==================== -->
+    <section class="section-purity" id="purity">
+      <div class="container">
+        <div class="purity-box">
+          <div class="purity-header">
+            <span class="purity-kicker">CERTIFIED LABORATORY ANALYSIS · LOT № 04</span>
+            <h2 class="purity-title">Verified Chemical &amp; Microbiological Purity</h2>
+            <p class="purity-lead">
+              Independently analyzed under Bulgarian State Standards BDS 8840:1971 and European Pharmacopoeia monographs. 
+              Certified by The Spanish Group LLC under official ATA Translation #267262.
+            </p>
+          </div>
+
+          <!-- 4 Stat Cards -->
+          <div class="purity-stats-grid">
+            <div class="purity-stat-card">
+              <span class="stat-formula">MgCl₂</span>
+              <div class="stat-number">253.14 <span class="stat-unit">g/L</span></div>
+              <h4 class="stat-label">Magnesium Chloride</h4>
+              <p class="stat-desc">Standard Norm: 185 – 285 g/L · BDS 8840:1971. Rapid transdermal absorption.</p>
+            </div>
+
+            <div class="purity-stat-card">
+              <span class="stat-formula">MgSO₄</span>
+              <div class="stat-number">70.36 <span class="stat-unit">g/L</span></div>
+              <h4 class="stat-label">Magnesium Sulfate</h4>
+              <p class="stat-desc">Standard Norm: 55 – 95 g/L · Lab Method 2/2009. Cellular tension relief.</p>
+            </div>
+
+            <div class="purity-stat-card">
+              <span class="stat-formula">pH</span>
+              <div class="stat-number">6.9 <span class="stat-unit">neutral</span></div>
+              <h4 class="stat-label">Physiological Balance</h4>
+              <p class="stat-desc">Standard Norm: 5.5 – 7.5 · BDS 17.1.4.27-80. Gentle on sensitive dermis.</p>
+            </div>
+
+            <div class="purity-stat-card">
+              <span class="stat-formula">Pb / Cd / As</span>
+              <div class="stat-number" style="color:#059669;">0.00 <span class="stat-unit">ppm</span></div>
+              <h4 class="stat-label">Zero Heavy Metals</h4>
+              <p class="stat-desc">Lead, Cadmium, Arsenic: Below Detection Limits. Sterile EU Pharmacopoeia.</p>
+            </div>
+          </div>
+
+          <!-- Document Inspection Banner -->
+          <div class="purity-doc-banner">
+            <div class="doc-banner-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div class="doc-banner-info">
+              <h4>Official 3-Page Certificate of Analysis (ATA #267262)</h4>
+              <p>Review the exact batch documentation, ministerial approvals, and laboratory chromatograms for Lot 04.</p>
+            </div>
+            <button class="btn-doc-inspect" id="btnBannerCert">
+              <span>Inspect Official Certificate</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== LAKE POMORIE HERITAGE STORY ==================== -->
+    <section class="section-heritage" id="heritage">
+      <div class="container heritage-grid">
+        <div class="heritage-image-frame">
+          <div class="heritage-quote-box">
+            <p class="quote-text">
+              “The healing mud and hyper-saline lye of Anchialo have restored warriors and travelers since the Thracians founded this peninsula four centuries before Christ.”
+            </p>
+            <span class="quote-author">— Balneological Chronicle of the Black Sea</span>
+          </div>
+        </div>
+
+        <div class="heritage-text-frame">
+          <span class="section-kicker">SACRED BALNEOLOGY HERITAGE</span>
+          <h2 class="section-headline">The Miracle of Lake Pomorie</h2>
+          <p class="heritage-paragraph">
+            Nestled on a narrow rocky peninsula extending into the Bulgarian Black Sea, Lake Pomorie is a rare hyper-saline lagoon 
+            separated from the open sea by a natural sandbar. For millennia, sea water has naturally filtered into shallow salterns 
+            under the intense Balkan summer sun.
+          </p>
+          <p class="heritage-paragraph">
+            Through natural fractional solar crystallization, common sodium chloride settles as pure white sea salt, while the remaining 
+            super-dense liquid — known in Bulgaria as <em>Luga</em> (medical lye) — concentrates magnesium chloride, sulfate, bromine, iodine, 
+            and bioactive peloids.
+          </p>
+          <div class="heritage-features-list">
+            <div class="feature-item">
+              <strong>Zero Petrochemical Synthesis</strong>
+              <span>100% natural colloidal solution formed by sun, sea, and time.</span>
+            </div>
+            <div class="feature-item">
+              <strong>Direct Osmotic Absorption</strong>
+              <span>Bypasses stomach acids and the digestive system directly through skin follicles.</span>
+            </div>
+            <div class="feature-item">
+              <strong>Azimut 6000 Ltd Stewardship</strong>
+              <span>Guaranteed authentic Pomorie extraction under certified ISO 22716 European cosmetic safety.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== WELLNESS & BALNEOLOGY JOURNAL ==================== -->
+    <section class="section-journal" id="journal">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="section-kicker">BALNEOTHERAPY &amp; RECOVERY RESEARCH</span>
+          <h2 class="section-headline">The Clinical Journal</h2>
+          <p class="section-subtext">
+            Original scientific publications and practical guides authored by Sotir Kichukov and European balneologists, 
+            exploring the mechanisms of transdermal magnesium, joint health, and athletic sleep optimization.
+          </p>
+        </div>
+
+        <!-- Blog Posts Grid -->
+        <div class="blog-grid" id="blogGrid">
+          <!-- Dynamically populated from data/blog_posts.json -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FREQUENTLY ASKED QUESTIONS ==================== -->
+    <section class="section-faq" id="faq">
+      <div class="container faq-container">
+        <div class="section-header-center">
+          <span class="section-kicker">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 class="section-headline">Everything You Need to Know</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Why choose transdermal magnesium over oral tablets?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Oral magnesium tablets frequently cause gastrointestinal upset, diarrhea, and poor absorption due to stomach acids and digestive limits. Transdermal magnesium chloride is absorbed directly through the skin's sweat glands and hair follicles into the local tissue and bloodstream, delivering targeted relief where your muscles need it most without digestive stress.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I apply Anchialo Dual Magnesium Gel?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Massage a generous amount onto clean, dry skin on tired muscles, sore joints, or along the spine. Allow it to absorb for 30 minutes to several hours, or leave it on overnight for deeper relaxation. If faint salt crystals form, simply rinse with cool water. Avoid sensitive membranes and open abrasions.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Will I feel a tingling sensation?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Because Anchialo contains a clinical concentration of over 250 g/L magnesium salts, a mild warming or tingling sensation during the first few applications is completely normal and indicates rapid microcirculation. As your cellular magnesium levels normalize, this sensation subsides.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What is the difference between the Gel and the Pure Oil?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Anchialo Dual Magnesium Gel is enriched with natural hydrocolloids and botanical extracts (Arnica, Lavender, Rosemary, Juniper, Grape) for a smooth, non-drip massage application. Anchialo Magnesium Oil is a 100% pure, unfragranced liquid mineral brine with a naturally silky glide, ideal for full-body rubs or mineral foot baths.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How can I order and receive my parcel in Australia?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>All stock is located in Melbourne under Sotir Kichukov. You can order directly online through this store ($49 AUD per jar) or message via WhatsApp (+61 423 269 586) for same-day local pickup at CPT MMA or Australia Post Express dispatch with tracking.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== PRESTIGE LUXURY FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col-brand">
+        <span class="footer-brand-title">ANCHIALO</span>
+        <span class="footer-brand-tag">NATURAL BLACK SEA BALNEOLOGY</span>
+        <p class="footer-brand-desc">
+          Harvested and produced in Pomorie, Bulgaria by Azimut 6000 Ltd. 
+          Dedicated to pure European balneotherapy, authentic natural minerals, and uncompromised athletic recovery.
+        </p>
+        <div class="footer-cert-tags">
+          <span>ISO 22716 GMP</span>
+          <span>LOT № 04 CERTIFIED</span>
+          <span>ATA #267262</span>
+          <span>PAO 12M</span>
+        </div>
+      </div>
+
+      <div class="footer-col-links">
+        <h4 class="footer-col-heading">Collection</h4>
+        <ul>
+          <li><a href="#collection">Dual Magnesium Gels (300g)</a></li>
+          <li><a href="#collection">Magnesium Brine Oil (300ml)</a></li>
+          <li><a href="#collection">Gel + Oil Starter Combo</a></li>
+          <li><a href="#collection">Combat Recovery 3-Pack</a></li>
+          <li><a href="#blends">Signature Botanical Blends</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-links">
+        <h4 class="footer-col-heading">Science &amp; Heritage</h4>
+        <ul>
+          <li><a href="#purity">Certificate of Analysis (Lot 04)</a></li>
+          <li><a href="#heritage">The Lake Pomorie Salterns</a></li>
+          <li><a href="#journal">Balneotherapy Research Journal</a></li>
+          <li><a href="#faq">Application FAQ</a></li>
+          <li><a href="https://wa.me/61423269586" target="_blank" rel="noopener">Wholesale &amp; Gym Inquiries</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-contact">
+        <h4 class="footer-col-heading">Producer &amp; Distribution</h4>
+        <div class="contact-card-info">
+          <p><strong>Producer:</strong> AZIMUT 6000 Ltd<br>Pomorie 8200, Ivan Vazov 18 str, Bulgaria<br>GTIN: 3 800230 111746</p>
+          <p style="margin-top: 10px;"><strong>Australian Distribution:</strong><br>Sotir Kichukov · Melbourne, VIC<br>CPT MMA High Performance Recovery<br>WhatsApp / Tel: <a href="tel:+61423269586" style="color:var(--accent-gold); font-weight:600;">+61 423 269 586</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container footer-bottom-inner">
+        <p>© 2025–2027 ANCHIALO · Azimut 6000 Ltd · All Rights Reserved.</p>
+        <p>100% Authentic Bulgarian Mineral Lye · No Animal Testing · Recyclable PET 1</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SHOPPING BAG DRAWER ==================== -->
+  <div class="bag-drawer-backdrop" id="bagBackdrop"></div>
+  <aside class="bag-drawer" id="bagDrawer" aria-label="Shopping Bag">
+    <div class="bag-drawer-header">
+      <div class="bag-title-group">
+        <h3>Your Shopping Bag</h3>
+        <span class="bag-header-count" id="drawerItemCount">0 items</span>
+      </div>
+      <button class="btn-close-drawer" id="closeBagBtn" aria-label="Close bag">&times;</button>
+    </div>
+
+    <!-- Free Shipping Progress -->
+    <div class="shipping-meter-wrap">
+      <div class="shipping-meter-label">
+        <span id="shippingMeterText">Add $31.00 for FREE Australia-wide delivery</span>
+        <span id="shippingMeterPercent">61%</span>
+      </div>
+      <div class="shipping-meter-track">
+        <div class="shipping-meter-bar" id="shippingMeterBar" style="width: 61%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items List -->
+    <div class="bag-items-list" id="bagItemsContainer">
+      <!-- Dynamically populated by app.js -->
+    </div>
+
+    <!-- Bag Drawer Footer -->
+    <div class="bag-drawer-footer">
+      <div class="bag-subtotal-row">
+        <span>Estimated Total</span>
+        <span class="bag-total-val" id="drawerSubtotalPrice">A$ 49.00 AUD</span>
+      </div>
+      <p class="bag-tax-note">Includes domestic Australian GST. Dispatched from Melbourne.</p>
+
+      <div class="bag-checkout-actions">
+        <a id="btnProceedWhatsApp" href="#" target="_blank" rel="noopener" class="btn-checkout-wa">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.41a8.17 8.17 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.53 11.51c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8.6.26 1.07.42 1.44.54.61.19 1.16.16 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3Z"/></svg>
+          <span>Complete Order via WhatsApp</span>
+        </a>
+        <button class="btn-checkout-secondary" id="btnCopyOrderSummary">
+          <span>Copy Order Summary to Clipboard</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== 3-PAGE QUALITY CERTIFICATE MODAL ==================== -->
+  <div class="modal-backdrop" id="certModalBackdrop">
+    <div class="modal-cert-container">
+      <div class="modal-header">
+        <div>
+          <span class="modal-kicker">MINISTRY OF HEALTH · BULGARIAN ACADEMY OF SCIENCES</span>
+          <h3 class="modal-title">Official Certificate of Quality &amp; Analysis (Lot 04)</h3>
+        </div>
+        <button class="btn-modal-close" id="btnCloseCertModal">&times;</button>
+      </div>
+
+      <div class="modal-cert-nav">
+        <button class="btn-cert-page active" data-page="1">Page 1: Chemical Assay &amp; MgCl₂</button>
+        <button class="btn-cert-page" data-page="2">Page 2: Microbiological &amp; Heavy Metals</button>
+        <button class="btn-cert-page" data-page="3">Page 3: ATA Certified Translation #267262</button>
+      </div>
+
+      <div class="modal-cert-viewport">
+        <img id="certModalImage" src="assets/official_labels_rendered/quality_certificate_page_1.png" alt="Official Certificate of Analysis">
+      </div>
+
+      <div class="modal-footer">
+        <span class="cert-footnote">Verified under European Pharmacopoeia standards and BDS 8840:1971. Translated by The Spanish Group LLC.</span>
+        <a id="btnDownloadCertPdf" href="assets/official_drive_assets/Quality Certificate.docx.pdf" class="btn-modal-download" download>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download Official PDF</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== BLOG POST READER MODAL ==================== -->
+  <div class="modal-backdrop" id="blogModalBackdrop">
+    <div class="modal-blog-container">
+      <div class="modal-header">
+        <div>
+          <span class="modal-kicker" id="blogModalCategory">BALNEOLOGY RESEARCH</span>
+          <h3 class="modal-title" id="blogModalTitle">Article Title</h3>
+          <span class="blog-modal-author" id="blogModalAuthor">By Sotir Kichukov · 5 min read</span>
+        </div>
+        <button class="btn-modal-close" id="btnCloseBlogModal">&times;</button>
+      </div>
+      <div class="modal-blog-body" id="blogModalBody">
+        <!-- Dynamically populated from blog_posts.json -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Core E-Commerce & Balneology Engine -->
+  <script src="app.js"></script>
+</body>
+</html>
