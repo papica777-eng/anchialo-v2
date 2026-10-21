@@ -1762,7 +1762,10 @@ button {
   right: 0;
   bottom: 0;
   width: 100%;
-  max-width: 440px;
+  max-width: 450px;
+  height: 100%;
+  max-height: 100vh;
+  max-height: 100dvh;
   background: #ffffff;
   z-index: 999;
   box-shadow: var(--shadow-drawer);
@@ -1770,6 +1773,9 @@ button {
   flex-direction: column;
   transform: translateX(100%);
   transition: transform var(--tr-smooth);
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch;
 }
 
 .bag-drawer.active {
@@ -1777,11 +1783,15 @@ button {
 }
 
 .bag-drawer-header {
-  padding: 24px;
+  padding: 18px 24px;
   border-bottom: 1px solid var(--border-subtle);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 25;
 }
 
 .bag-title-group h3 {
@@ -1818,6 +1828,9 @@ button {
   background: var(--bg-secondary);
   padding: 14px 24px;
   border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 61px;
+  z-index: 24;
 }
 
 .shipping-meter-label {
@@ -1845,9 +1858,8 @@ button {
 
 /* Bag Items List */
 .bag-items-list {
-  padding: 24px;
-  flex-grow: 1;
-  overflow-y: auto;
+  padding: 20px 24px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -1937,9 +1949,10 @@ button {
 
 /* Bag Footer */
 .bag-drawer-footer {
-  padding: 24px;
+  padding: 20px 24px 80px; /* 80px bottom padding guarantees all payment buttons are fully reachable */
   border-top: 1px solid var(--border-subtle);
   background: #ffffff;
+  flex-shrink: 0;
 }
 
 .bag-subtotal-row {
@@ -2172,17 +2185,33 @@ button {
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 
-.auspost-result-item {
-  padding: 8px 12px;
-  font-size: 12px;
+.auspost-result-item, .auspost-dropdown-item {
+  padding: 10px 14px;
+  font-size: 13px;
   color: var(--text-primary);
   cursor: pointer;
   border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   transition: background var(--tr-fast);
 }
 
-.auspost-result-item:hover {
-  background: var(--bg-canvas);
+.auspost-result-item:hover, .auspost-dropdown-item:hover {
+  background: var(--bg-secondary);
+}
+
+.auspost-dropdown-loading {
+  padding: 10px 14px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.auspost-dropdown-empty {
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #dc2626;
+  background: #fef2f2;
 }
 
 .auspost-selected-details {
@@ -2950,5 +2979,11 @@ button {
   }
   .blend-display-card {
     padding: 24px;
+  }
+  .bag-drawer {
+    max-width: 100%;
+  }
+  .bag-drawer-footer {
+    padding: 18px 20px calc(80px + env(safe-area-inset-bottom, 20px));
   }
 }

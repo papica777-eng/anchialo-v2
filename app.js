@@ -1108,14 +1108,174 @@
 
     // Curated Australian Localities Fallback Dictionary (Offline / Rate-Limit Shield)
     const _POPULAR_LOCALITIES = [
+      // Melbourne Knox / Monash / Dandenong & South-East (including Rowville)
+      { location: 'ROWVILLE', state: 'VIC', postcode: '3178' },
+      { location: 'KNOXFIELD', state: 'VIC', postcode: '3180' },
+      { location: 'SCORESBY', state: 'VIC', postcode: '3179' },
+      { location: 'WANTIRNA', state: 'VIC', postcode: '3152' },
+      { location: 'WANTIRNA SOUTH', state: 'VIC', postcode: '3152' },
+      { location: 'FERNTREE GULLY', state: 'VIC', postcode: '3156' },
+      { location: 'UPPER FERNTREE GULLY', state: 'VIC', postcode: '3156' },
+      { location: 'BORONIA', state: 'VIC', postcode: '3155' },
+      { location: 'BAYSWATER', state: 'VIC', postcode: '3153' },
+      { location: 'BAYSWATER NORTH', state: 'VIC', postcode: '3153' },
+      { location: 'THE BASIN', state: 'VIC', postcode: '3154' },
+      { location: 'LYSTERFIELD', state: 'VIC', postcode: '3156' },
+      { location: 'LYSTERFIELD SOUTH', state: 'VIC', postcode: '3156' },
+      { location: 'RINGWOOD', state: 'VIC', postcode: '3134' },
+      { location: 'RINGWOOD EAST', state: 'VIC', postcode: '3135' },
+      { location: 'RINGWOOD NORTH', state: 'VIC', postcode: '3134' },
+      { location: 'CROYDON', state: 'VIC', postcode: '3136' },
+      { location: 'CROYDON SOUTH', state: 'VIC', postcode: '3136' },
+      { location: 'CROYDON HILLS', state: 'VIC', postcode: '3136' },
+      { location: 'CROYDON NORTH', state: 'VIC', postcode: '3136' },
+      { location: 'MITCHAM', state: 'VIC', postcode: '3132' },
+      { location: 'VERMONT', state: 'VIC', postcode: '3133' },
+      { location: 'VERMONT SOUTH', state: 'VIC', postcode: '3133' },
+      { location: 'DANDENONG', state: 'VIC', postcode: '3175' },
+      { location: 'DANDENONG NORTH', state: 'VIC', postcode: '3175' },
+      { location: 'DANDENONG SOUTH', state: 'VIC', postcode: '3175' },
+      { location: 'NOBLE PARK', state: 'VIC', postcode: '3174' },
+      { location: 'SPRINGVALE', state: 'VIC', postcode: '3171' },
+      { location: 'SPRINGVALE SOUTH', state: 'VIC', postcode: '3172' },
+      { location: 'KEYSBOROUGH', state: 'VIC', postcode: '3173' },
+      { location: 'MULGRAVE', state: 'VIC', postcode: '3170' },
+      { location: 'WHEELERS HILL', state: 'VIC', postcode: '3150' },
+      { location: 'GLEN WAVERLEY', state: 'VIC', postcode: '3150' },
+      { location: 'MOUNT WAVERLEY', state: 'VIC', postcode: '3149' },
+      { location: 'CLAYTON', state: 'VIC', postcode: '3168' },
+      { location: 'CLAYTON SOUTH', state: 'VIC', postcode: '3169' },
+      { location: 'OAKLEIGH', state: 'VIC', postcode: '3166' },
+      { location: 'OAKLEIGH EAST', state: 'VIC', postcode: '3166' },
+      { location: 'OAKLEIGH SOUTH', state: 'VIC', postcode: '3167' },
+      { location: 'CHADSTONE', state: 'VIC', postcode: '3148' },
+      { location: 'BERWICK', state: 'VIC', postcode: '3806' },
+      { location: 'NARRE WARREN', state: 'VIC', postcode: '3805' },
+      { location: 'NARRE WARREN NORTH', state: 'VIC', postcode: '3804' },
+      { location: 'NARRE WARREN SOUTH', state: 'VIC', postcode: '3805' },
+      { location: 'HAMPTON PARK', state: 'VIC', postcode: '3976' },
+      { location: 'HALLAM', state: 'VIC', postcode: '3803' },
+      { location: 'ENDEAVOUR HILLS', state: 'VIC', postcode: '3802' },
+      { location: 'CRANBOURNE', state: 'VIC', postcode: '3977' },
+      { location: 'CRANBOURNE NORTH', state: 'VIC', postcode: '3977' },
+      { location: 'CRANBOURNE EAST', state: 'VIC', postcode: '3977' },
+      { location: 'CRANBOURNE WEST', state: 'VIC', postcode: '3977' },
+      { location: 'CLYDE', state: 'VIC', postcode: '3978' },
+      { location: 'CLYDE NORTH', state: 'VIC', postcode: '3978' },
+      { location: 'PAKENHAM', state: 'VIC', postcode: '3810' },
+      { location: 'OFFICER', state: 'VIC', postcode: '3809' },
+      { location: 'FRANKSTON', state: 'VIC', postcode: '3199' },
+      { location: 'FRANKSTON SOUTH', state: 'VIC', postcode: '3199' },
+      { location: 'FRANKSTON NORTH', state: 'VIC', postcode: '3200' },
+      { location: 'SEAFORD', state: 'VIC', postcode: '3198' },
+      { location: 'CARRUM', state: 'VIC', postcode: '3197' },
+      { location: 'PATTERSON LAKES', state: 'VIC', postcode: '3197' },
+      { location: 'CHELSEA', state: 'VIC', postcode: '3196' },
+      { location: 'MORDIALLOC', state: 'VIC', postcode: '3195' },
+      { location: 'MENTONE', state: 'VIC', postcode: '3194' },
+      { location: 'CHELTENHAM', state: 'VIC', postcode: '3192' },
+      { location: 'MOORABBIN', state: 'VIC', postcode: '3189' },
+      { location: 'BENTLEIGH', state: 'VIC', postcode: '3204' },
+      { location: 'BENTLEIGH EAST', state: 'VIC', postcode: '3165' },
+      { location: 'MORNINGTON', state: 'VIC', postcode: '3931' },
+      { location: 'MOUNT ELIZA', state: 'VIC', postcode: '3930' },
+      { location: 'MOUNT MARTHA', state: 'VIC', postcode: '3934' },
+      { location: 'ROSEBUD', state: 'VIC', postcode: '3939' },
+      { location: 'RYE', state: 'VIC', postcode: '3941' },
+      { location: 'SORRENTO', state: 'VIC', postcode: '3943' },
+      // Melbourne Inner & Bayside
       { location: 'MELBOURNE', state: 'VIC', postcode: '3000' },
       { location: 'EAST MELBOURNE', state: 'VIC', postcode: '3002' },
-      { location: 'SOUTH YARRA', state: 'VIC', postcode: '3141' },
-      { location: 'RICHMOND', state: 'VIC', postcode: '3121' },
+      { location: 'WEST MELBOURNE', state: 'VIC', postcode: '3003' },
+      { location: 'SOUTHBANK', state: 'VIC', postcode: '3006' },
+      { location: 'DOCKLANDS', state: 'VIC', postcode: '3008' },
+      { location: 'SOUTH MELBOURNE', state: 'VIC', postcode: '3205' },
+      { location: 'PORT MELBOURNE', state: 'VIC', postcode: '3207' },
+      { location: 'ALBERT PARK', state: 'VIC', postcode: '3206' },
+      { location: 'MIDDLE PARK', state: 'VIC', postcode: '3206' },
       { location: 'ST KILDA', state: 'VIC', postcode: '3182' },
+      { location: 'ST KILDA EAST', state: 'VIC', postcode: '3183' },
+      { location: 'ELWOOD', state: 'VIC', postcode: '3184' },
+      { location: 'ELSTERNWICK', state: 'VIC', postcode: '3185' },
+      { location: 'BRIGHTON', state: 'VIC', postcode: '3186' },
+      { location: 'BRIGHTON EAST', state: 'VIC', postcode: '3187' },
+      { location: 'HAMPTON', state: 'VIC', postcode: '3188' },
+      { location: 'SANDRINGHAM', state: 'VIC', postcode: '3191' },
+      { location: 'BEAUMARIS', state: 'VIC', postcode: '3193' },
+      { location: 'BLACK ROCK', state: 'VIC', postcode: '3193' },
+      { location: 'PRAHRAN', state: 'VIC', postcode: '3181' },
+      { location: 'WINDSOR', state: 'VIC', postcode: '3181' },
+      { location: 'SOUTH YARRA', state: 'VIC', postcode: '3141' },
+      { location: 'TOORAK', state: 'VIC', postcode: '3142' },
+      { location: 'ARMADALE', state: 'VIC', postcode: '3143' },
+      { location: 'MALVERN', state: 'VIC', postcode: '3144' },
+      { location: 'MALVERN EAST', state: 'VIC', postcode: '3145' },
+      { location: 'CAULFIELD', state: 'VIC', postcode: '3162' },
+      { location: 'CARNEGIE', state: 'VIC', postcode: '3163' },
+      { location: 'RICHMOND', state: 'VIC', postcode: '3121' },
+      { location: 'CREMORNE', state: 'VIC', postcode: '3121' },
+      { location: 'BURNLEY', state: 'VIC', postcode: '3121' },
+      { location: 'HAWTHORN', state: 'VIC', postcode: '3122' },
+      { location: 'HAWTHORN EAST', state: 'VIC', postcode: '3123' },
+      { location: 'KEW', state: 'VIC', postcode: '3101' },
+      { location: 'KEW EAST', state: 'VIC', postcode: '3102' },
+      { location: 'CAMBERWELL', state: 'VIC', postcode: '3124' },
+      { location: 'CANTERBURY', state: 'VIC', postcode: '3126' },
+      { location: 'SURREY HILLS', state: 'VIC', postcode: '3127' },
+      { location: 'MONT ALBERT', state: 'VIC', postcode: '3127' },
+      { location: 'BOX HILL', state: 'VIC', postcode: '3128' },
+      { location: 'BOX HILL NORTH', state: 'VIC', postcode: '3129' },
+      { location: 'BOX HILL SOUTH', state: 'VIC', postcode: '3128' },
+      { location: 'BLACKBURN', state: 'VIC', postcode: '3130' },
+      { location: 'NUNAWADING', state: 'VIC', postcode: '3131' },
+      { location: 'FOREST HILL', state: 'VIC', postcode: '3131' },
+      { location: 'BURWOOD', state: 'VIC', postcode: '3125' },
+      { location: 'DONCASTER', state: 'VIC', postcode: '3108' },
+      { location: 'DONCASTER EAST', state: 'VIC', postcode: '3109' },
+      { location: 'TEMPLESTOWE', state: 'VIC', postcode: '3106' },
+      { location: 'BULLEEN', state: 'VIC', postcode: '3105' },
+      { location: 'BALWYN', state: 'VIC', postcode: '3103' },
       { location: 'CARLTON', state: 'VIC', postcode: '3053' },
       { location: 'FITZROY', state: 'VIC', postcode: '3065' },
+      { location: 'COLLINGWOOD', state: 'VIC', postcode: '3066' },
+      { location: 'ABBOTSFORD', state: 'VIC', postcode: '3067' },
+      { location: 'PARKVILLE', state: 'VIC', postcode: '3052' },
+      { location: 'NORTH MELBOURNE', state: 'VIC', postcode: '3051' },
       { location: 'BRUNSWICK', state: 'VIC', postcode: '3056' },
+      { location: 'COBURG', state: 'VIC', postcode: '3058' },
+      { location: 'ESSENDON', state: 'VIC', postcode: '3040' },
+      { location: 'MOONEE PONDS', state: 'VIC', postcode: '3039' },
+      { location: 'NORTHCOTE', state: 'VIC', postcode: '3070' },
+      { location: 'THORNBURY', state: 'VIC', postcode: '3071' },
+      { location: 'PRESTON', state: 'VIC', postcode: '3072' },
+      { location: 'RESERVOIR', state: 'VIC', postcode: '3073' },
+      { location: 'HEIDELBERG', state: 'VIC', postcode: '3084' },
+      { location: 'IVANHOE', state: 'VIC', postcode: '3079' },
+      // Melbourne West
+      { location: 'FOOTSCRAY', state: 'VIC', postcode: '3011' },
+      { location: 'YARRAVILLE', state: 'VIC', postcode: '3013' },
+      { location: 'SEDDON', state: 'VIC', postcode: '3011' },
+      { location: 'NEWPORT', state: 'VIC', postcode: '3015' },
+      { location: 'WILLIAMSTOWN', state: 'VIC', postcode: '3016' },
+      { location: 'ALTONA', state: 'VIC', postcode: '3018' },
+      { location: 'POINT COOK', state: 'VIC', postcode: '3030' },
+      { location: 'WERRIBEE', state: 'VIC', postcode: '3030' },
+      { location: 'HOPPERS CROSSING', state: 'VIC', postcode: '3029' },
+      { location: 'TARNEIT', state: 'VIC', postcode: '3029' },
+      { location: 'TRUGANINA', state: 'VIC', postcode: '3029' },
+      { location: 'SUNSHINE', state: 'VIC', postcode: '3020' },
+      { location: 'CAROLINE SPRINGS', state: 'VIC', postcode: '3023' },
+      { location: 'MELTON', state: 'VIC', postcode: '3337' },
+      // Regional Victoria
+      { location: 'GEELONG', state: 'VIC', postcode: '3220' },
+      { location: 'BALLARAT', state: 'VIC', postcode: '3350' },
+      { location: 'BENDIGO', state: 'VIC', postcode: '3550' },
+      { location: 'SHEPPARTON', state: 'VIC', postcode: '3630' },
+      { location: 'TRARALGON', state: 'VIC', postcode: '3844' },
+      { location: 'WARRNAMBOOL', state: 'VIC', postcode: '3280' },
+      { location: 'WODONGA', state: 'VIC', postcode: '3690' },
+      { location: 'MILDURA', state: 'VIC', postcode: '3500' },
+      // Major Interstate Australian Capitals & Hubs
       { location: 'SYDNEY', state: 'NSW', postcode: '2000' },
       { location: 'BONDI', state: 'NSW', postcode: '2026' },
       { location: 'SURRY HILLS', state: 'NSW', postcode: '2010' },
@@ -1128,22 +1288,21 @@
       { location: 'ADELAIDE', state: 'SA', postcode: '5000' },
       { location: 'HOBART', state: 'TAS', postcode: '7000' },
       { location: 'CANBERRA', state: 'ACT', postcode: '2600' },
-      { location: 'DARWIN', state: 'NT', postcode: '0800' },
-      { location: 'GEELONG', state: 'VIC', postcode: '3220' },
-      { location: 'BALLARAT', state: 'VIC', postcode: '3350' },
-      { location: 'BENDIGO', state: 'VIC', postcode: '3550' }
+      { location: 'DARWIN', state: 'NT', postcode: '0800' }
     ];
 
     return {
       async searchLocalities(query) {
-        const q = (query || '').trim().toUpperCase();
-        if (!q || q.length < 2) return [];
+        const raw = (query || '').trim();
+        if (raw.length < 2) return [];
 
-        // 1. Live Australia Post Digital API Query
+        const q = raw.toUpperCase();
+
+        // 1. Live Australia Post Digital API Query (if available and CORS allows)
         const authKey = _resolveAuthHeader();
         if (authKey) {
           try {
-            const url = `https://digitalapi.auspost.com.au/postcode/search.json?q=${encodeURIComponent(query.trim())}`;
+            const url = `https://digitalapi.auspost.com.au/postcode/search.json?q=${encodeURIComponent(raw)}`;
             const res = await fetch(url, {
               headers: {
                 'AUTH-KEY': authKey
@@ -1163,16 +1322,53 @@
               }
             }
           } catch (e) {
-            console.warn('[AusPost Vault API] Network/CORS fallback engaged:', e.message);
+            // CORS or rate limit: fallback engaged
           }
         }
 
-        // 2. High-speed offline/rate-limit fallback filter
-        return _POPULAR_LOCALITIES.filter(item => 
-          item.location.includes(q) || 
-          item.postcode.startsWith(q) ||
-          item.state === q
-        );
+        // 2. Intelligent High-Speed Offline Search
+        // Check for 4-digit postcode (e.g. "3178" or within "3178 Rowville")
+        const pcMatch = q.match(/\b\d{4}\b/) || (q.match(/^\d{2,4}$/) ? [q] : null);
+        const textTerms = q.replace(/\b\d{4}\b/, '').replace(/[^A-Z\s]/g, ' ').split(/\s+/).filter(t => t.length >= 2);
+
+        // Filter against curated database
+        let matches = _POPULAR_LOCALITIES.filter(item => {
+          // Exact or prefix match on postcode
+          if (pcMatch && (item.postcode === pcMatch[0] || item.postcode.startsWith(pcMatch[0]))) {
+            return true;
+          }
+          // Exact substring on location
+          if (item.location.includes(q)) return true;
+          // Substring match on any typed term
+          for (const term of textTerms) {
+            if (item.location.includes(term)) return true;
+          }
+          return false;
+        });
+
+        // 3. Dynamic Australian Postcode Resolver Fallback
+        // If user entered a 4-digit code (e.g. any valid AU postcode) not specifically listed
+        if (matches.length === 0 && pcMatch && pcMatch[0].length === 4) {
+          const pc = pcMatch[0];
+          const num = parseInt(pc, 10);
+          let state = 'VIC';
+          if ((num >= 2000 && num <= 2599) || (num >= 2619 && num <= 2899) || (num >= 2921 && num <= 2999)) state = 'NSW';
+          else if ((num >= 2600 && num <= 2618) || (num >= 2900 && num <= 2920)) state = 'ACT';
+          else if ((num >= 4000 && num <= 4999) || (num >= 9000 && num <= 9999)) state = 'QLD';
+          else if ((num >= 5000 && num <= 5799) || (num >= 5800 && num <= 5999)) state = 'SA';
+          else if ((num >= 6000 && num <= 6797) || (num >= 6800 && num <= 6999)) state = 'WA';
+          else if ((num >= 7000 && num <= 7799) || (num >= 7800 && num <= 7999)) state = 'TAS';
+          else if (num >= 800 && num <= 999) state = 'NT';
+
+          const locLabel = textTerms.length > 0 ? textTerms.join(' ') : `SUBURB ${pc}`;
+          matches.push({
+            location: locLabel,
+            state: state,
+            postcode: pc
+          });
+        }
+
+        return matches.slice(0, 8);
       }
     };
   })();
