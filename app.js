@@ -1088,8 +1088,8 @@
     // Domain lockdown & anti-scraping gate
     function _verifyDomain() {
       const h = (window.location && window.location.hostname) ? window.location.hostname.toLowerCase() : '';
-      const allowed = ['localhost', '127.0.0.1', 'papica777-eng.github.io', 'anchialo.com', 'www.anchialo.com', ''];
-      return allowed.some(d => h === d || h.endsWith('.github.io') || h.endsWith('.anchialo.com'));
+      const allowed = ['localhost', '127.0.0.1', 'papica777-eng.github.io', 'anchialo.com', 'www.anchialo.com', 'anchialo-v2.pages.dev', ''];
+      return allowed.some(d => h === d || h.endsWith('.github.io') || h.endsWith('.anchialo.com') || h.endsWith('.pages.dev'));
     }
 
     // Ephemeral in-memory de-obfuscation (never leaks to global window)
